@@ -1,40 +1,254 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Little Universe</title>
+  <title>My Little Universe ✨</title>
   <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
     body {
-      background: #100d1c;
-      color: #f5eaff;
       font-family: Arial, sans-serif;
-      text-align: center;
-      padding: 60px 20px;
+      background: #050817;
+      color: #f5f3ff;
+      line-height: 1.6;
     }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 8%;
+      background: #080d20;
+      border-bottom: 1px solid #252b48;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .logo {
+      font-size: 23px;
+      font-weight: bold;
+      color: #c4a1ff;
+    }
+
+    nav { display: flex; gap: 18px; flex-wrap: wrap; }
+
+    nav a {
+      color: #d8dafa;
+      text-decoration: none;
+    }
+
+    nav a:hover { color: #c084fc; }
+
+    .hero {
+      min-height: 440px;
+      padding: 90px 8%;
+      background:
+        radial-gradient(ellipse at 80% 70%, #392080 0%, transparent 38%),
+        radial-gradient(ellipse at 20% 20%, #142c65 0%, transparent 45%),
+        linear-gradient(135deg, #050817, #101334, #080817);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: "✦     ·       ✧      ·    ✦       ·";
+      position: absolute;
+      top: 25px;
+      right: 8%;
+      color: #c4b5fd;
+      font-size: 25px;
+      letter-spacing: 12px;
+      pointer-events: none;
+    }
+
+    .welcome {
+      color: #c084fc;
+      font-size: 20px;
+    }
+
     h1 {
-      color: #d6a8ff;
-      font-size: 42px;
+      font-size: clamp(42px, 8vw, 76px);
+      line-height: 1.1;
+      margin: 15px 0;
+      max-width: 650px;
     }
-    p {
-      color: #c9bfd9;
+
+    h1 span {
+      background: linear-gradient(90deg, #93c5fd, #c084fc);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .intro {
+      color: #cbd5f5;
+      max-width: 490px;
       font-size: 18px;
+      margin-bottom: 25px;
     }
-    button {
-      background: #b783ff;
-      color: #160c25;
-      border: none;
-      padding: 12px 22px;
+
+    .button {
+      display: inline-block;
+      background: linear-gradient(90deg, #7c3aed, #a855f7);
+      color: white;
+      padding: 12px 25px;
+      border-radius: 30px;
+      text-decoration: none;
+      transition: transform .2s, box-shadow .2s;
+    }
+
+    .button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 0 24px #8b5cf6;
+    }
+
+    section { padding: 65px 8%; }
+
+    .section-title {
+      text-align: center;
+      font-size: 30px;
+      margin-bottom: 10px;
+    }
+
+    .section-intro {
+      text-align: center;
+      color: #aeb9dd;
+      margin-bottom: 30px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: linear-gradient(145deg, #10172d, #090e20);
+      border: 1px solid #293253;
+      padding: 25px;
       border-radius: 20px;
-      cursor: pointer;
+      transition: transform .25s, border-color .25s;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      border-color: #a78bfa;
+    }
+
+    .emoji { font-size: 32px; }
+
+    .card h3 { margin: 10px 0; font-size: 21px; }
+
+    .card p { color: #b9c5e9; margin-bottom: 15px; }
+
+    .card a {
+      color: #c4a1ff;
+      text-decoration: none;
+    }
+
+    .about {
+      text-align: center;
+      background: #090e20;
+    }
+
+    .about p {
+      max-width: 620px;
+      margin: 15px auto;
+      color: #c5cbea;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      color: #9da9d0;
+      border-top: 1px solid #252b48;
+    }
+
+    @media (max-width: 600px) {
+      header { padding: 18px 5%; }
+      nav { gap: 12px; }
+      .hero { padding: 75px 6%; }
+      section { padding: 45px 6%; }
     }
   </style>
 </head>
 <body>
-  <h1>✨ My Little Universe ✨</h1>
-  <p>A little space for creativity, dreams, and learning.</p>
-  <button onclick="alert('Welcome to my universe! 💜')">
-    Enter My Universe
-  </button>
+
+  <header>
+    <div class="logo">🪐 My Little Universe</div>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#learn">Learn</a>
+      <a href="#projects">Projects</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="hero" id="home">
+      <p class="welcome">Welcome to</p>
+      <h1>My Little<br><span>Universe ✨</span></h1>
+      <p class="intro">
+        A small space for big dreams, learning,
+        creativity and endless possibilities.
+      </p>
+      <a class="button" href="#learn">Explore my universe →</a>
+    </div>
+
+    <section id="learn">
+      <h2 class="section-title">Explore Your Universe 🌠</h2>
+      <p class="section-intro">Little steps can lead to incredible things.</p>
+
+      <div class="cards">
+        <article class="card">
+          <div class="emoji">📚</div>
+          <h3>Learn</h3>
+          <p>Discover new topics, learn skills and grow every day.</p>
+          <a href="#about">Start learning →</a>
+        </article>
+
+        <article class="card" id="projects">
+          <div class="emoji">💻</div>
+          <h3>Build</h3>
+          <p>Turn your ideas into real projects with code.</p>
+          <a href="#about">Explore projects →</a>
+        </article>
+
+        <article class="card">
+          <div class="emoji">🎨</div>
+          <h3>Create</h3>
+          <p>Let your imagination run free and create something new.</p>
+          <a href="#about">Get inspired →</a>
+        </article>
+
+        <article class="card">
+          <div class="emoji">💜</div>
+          <h3>Be You</h3>
+          <p>Your space, your ideas, your very own universe.</p>
+          <a href="#about">Discover more →</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="about" id="about">
+      <h2 class="section-title">A Little About This Universe 🌙</h2>
+      <p>
+        This is my little corner of the internet,
+        where I learn, experiment, build and dream.
+        Every new thing I learn is another star in my universe.
+      </p>
+      <a class="button" href="#home">Back to the stars ↑</a>
+    </section>
+  </main>
+
+  <footer>
+    ✨ A little progress each day leads to big results. ✨
+    <p>Made with 💜 and curiosity.</p>
+  </footer>
+
 </body>
 </html>
